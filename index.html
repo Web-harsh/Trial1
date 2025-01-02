@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+</head>
+<body>
+ <div class="container">
+     <br>
+     <h1>
+         Cypher 1.0🧃
+     </h1>
+     <br>
+     <img src="icon.png" alt="">
+     <br>
+     
+    <p id="text1"></p>
+    <p id="text2"></p>
+    
+    <button id="btn">
+        Unlock Cypher 
+    </button>
+ </div>  
+    <style>
+.container{
+    background:black;
+    height:100vh;
+    width:100%;
+}
+body{
+    margin:0;
+    padding:0;
+}
+
+.container img{
+    height:400px;
+    width:380px;
+    border-radius:100%;
+    display:block;
+    margin:0 auto;
+    border:3px solid white;
+}
+
+h1{
+    color:#55ff97;
+    font-family:fantasy;
+    text-align:center;
+    
+}
+
+p{
+    font-family:fantasy;
+    font-size:30px;
+    color:white;
+    text-align:center;
+} 
+
+#btn{
+    padding:20px 60px;
+    display:block;
+    margin:0 auto;
+    background:black;
+    color:white;
+    border:1px solid white;
+}
+    </style>
+    <script>
+       const text1 = "Welcome to Cypher 1.0🧃";
+const text2 = "Let's begin our journey!";
+let i = 0;
+let j = 0;
+const speed = 100;  // typing speed in milliseconds
+
+function typeWriter1() {
+  if (i < text1.length) {
+    document.getElementById("text1").textContent += text1.charAt(i);
+    i++;
+    setTimeout(typeWriter1, speed);
+  } else {
+    // Once the first line is done, start the second line
+    setTimeout(typeWriter2, 1620);  // delay before starting the second line
+  }
+}
+
+function typeWriter2() {
+  if (j < text2.length) {
+    document.getElementById("text2").textContent += text2.charAt(j);
+    j++;
+    setTimeout(typeWriter2, speed);
+  }
+}
+
+function wait(){
+    setTimeout(typeWriter1,1500)
+}
+wait();
+    </script>
+</body>
+</html>
